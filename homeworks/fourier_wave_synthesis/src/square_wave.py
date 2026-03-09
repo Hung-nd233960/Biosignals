@@ -29,7 +29,9 @@ def square_reference(t: np.ndarray, f0: float = 5.0, A: float = 1.0) -> np.ndarr
     return A * signal.square(2 * np.pi * f0 * t)
 
 
-def square_fourier(t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0) -> np.ndarray:
+def square_fourier(
+    t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0
+) -> np.ndarray:
     """Reconstruct a square wave using its Fourier series.
 
     Formula:

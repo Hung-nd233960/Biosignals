@@ -29,7 +29,9 @@ def sawtooth_reference(t: np.ndarray, f0: float = 5.0, A: float = 1.0) -> np.nda
     return A * signal.sawtooth(2 * np.pi * f0 * t)
 
 
-def sawtooth_fourier(t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0) -> np.ndarray:
+def sawtooth_fourier(
+    t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0
+) -> np.ndarray:
     """Reconstruct a sawtooth wave using its Fourier series.
 
     The SciPy reference ``sawtooth(2πf₀t)`` rises from −1 to +1. The

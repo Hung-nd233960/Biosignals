@@ -29,7 +29,9 @@ def triangle_reference(t: np.ndarray, f0: float = 5.0, A: float = 1.0) -> np.nda
     return A * signal.sawtooth(2 * np.pi * f0 * t, width=0.5)
 
 
-def triangle_fourier(t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0) -> np.ndarray:
+def triangle_fourier(
+    t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0
+) -> np.ndarray:
     """Reconstruct a triangle wave using its Fourier series.
 
     The SciPy reference ``sawtooth(2πf₀t, width=0.5)`` produces a
@@ -56,6 +58,6 @@ def triangle_fourier(t: np.ndarray, N: int, f0: float = 5.0, A: float = 1.0) -> 
     """
     x = np.zeros_like(t, dtype=float)
     for k in range(1, N + 1, 2):  # odd harmonics: 1, 3, 5, ...
-        x += (1.0 / k ** 2) * np.cos(2 * np.pi * k * f0 * t)
-    x *= -(8.0 * A) / (np.pi ** 2)
+        x += (1.0 / k**2) * np.cos(2 * np.pi * k * f0 * t)
+    x *= -(8.0 * A) / (np.pi**2)
     return x
