@@ -1,13 +1,13 @@
 """
 Signal Generation Module
 ========================
-Generates a chirp signal for STFT analysis.
+Generates a chirp signal for DFT / FFT analysis.
 """
 
-from pathlib import Path
 import numpy as np
 from scipy.signal import chirp
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 
 def generate_chirp(
